@@ -1,0 +1,89 @@
+/* Custom Luxury Animations & Refinements */
+
+:root {
+    --gold: #D4AF37;
+    --charcoal: #1a1a1a;
+}
+
+/* 1. Smooth Page Fade-In */
+body {
+    animation: fadeInPage 0.8s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. The "Gold Shimmer" Effect for Buttons */
+.gold-bg {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s border-box;
+}
+
+.gold-bg::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: all 0.6s;
+}
+
+.gold-bg:hover::after {
+    left: 120%;
+}
+
+.gold-bg:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    transform: scale(1.02);
+}
+
+/* 3. Elegant Navigation Hover */
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--gold);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* 4. Luxury Image Reveal */
+img {
+    filter: grayscale(20%);
+    transition: filter 0.5s ease, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+img:hover {
+    filter: grayscale(0%);
+}
+
+/* 5. Typography Kerning Animation */
+h1 {
+    letter-spacing: -0.02em;
+    animation: trackIn 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes trackIn {
+    0% { letter-spacing: 0.5em; opacity: 0; }
+    100% { letter-spacing: -0.02em; opacity: 1; }
+}
