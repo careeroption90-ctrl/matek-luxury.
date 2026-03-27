@@ -1,0 +1,26 @@
+<main class="max-w-md mx-auto py-32 px-6">
+    <h2 class="text-3xl mb-8 text-center">Identity</h2>
+    <form id="loginForm" class="space-y-4">
+        <input id="email" type="email" placeholder="Email" class="w-full bg-zinc-900 border border-gray-800 p-4 focus:border-[#D4AF37] outline-none">
+        <input id="password" type="password" placeholder="Password" class="w-full bg-zinc-900 border border-gray-800 p-4 focus:border-[#D4AF37] outline-none">
+        <button type="submit" class="w-full gold-bg text-black py-4 font-bold tracking-widest uppercase">Sign In</button>
+    </form>
+    <div class="mt-6 text-center text-sm text-gray-500">
+        New to Matek? <a href="#" class="gold-text">Create Account</a>
+    </div>
+
+    <script>
+        // CREATOR LOGIN: Email: careeroption90@gmail.com / Password: murtazab
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const pass = document.getElementById('password').value;
+            
+            if(email === 'careeroption90@gmail.com' && pass === 'murtazab') {
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Authentication Failed. Please contact the administrator.');
+            }
+        });
+    </script>
+</main>
